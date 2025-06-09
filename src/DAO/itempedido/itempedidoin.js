@@ -1,8 +1,8 @@
 const {conexao} = require('../conexao.js')
 
 
-async function itempedidi(){
-    const sql = `SELECT * FROM tbl_itempedido`;
+async function itempedidoin(){
+    const sql = `INSERT * FROM tbl_itempedido`;
     
     const conn = await conexao()
     try {
@@ -15,4 +15,4 @@ async function itempedidi(){
       }
 }
 
-module.exports = {itempedidi}
+module.exports = {itempedidoin}
