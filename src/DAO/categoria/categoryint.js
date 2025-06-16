@@ -5,8 +5,12 @@ async function categoryint(categoria) {
     
     const conn = await conexao();
     try {
-        // Executar a consulta
-        const [result] = await conn.query(sql, [categoria]);
+        const valores = [
+            categoria.id,
+            categoria.nome,
+             ];
+
+        const [result] = await conn.query(sql, valores);
         await conn.end();
         return result;
     } catch (err) {

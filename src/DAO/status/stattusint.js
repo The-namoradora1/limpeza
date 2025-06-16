@@ -5,8 +5,12 @@ async function stattusint(status) {
     
     const conn = await conexao();
     try {
-        // Executar a consulta
-        const [result] = await conn.query(sql, [stattusint]);
+        const valores = [
+            status.id,
+            status.nome,
+                      
+        ];
+        const [result] = await conn.query(sql,valores);
         await conn.end();
         return result;
     } catch (err) {

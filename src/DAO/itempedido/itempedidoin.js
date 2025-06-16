@@ -1,12 +1,18 @@
 import { conexao } from '../conexao.js';
 
 async function itempedidoin(itempedido) {
-    const sql = `INSERT INTO tbl_itempedido (	 id, id_pedido, id_produto, qnt) VALUES (?, ?, ?,?)`;
+    const sql = `INSERT INTO tbl_itempedido (id, id_pedido, id_produto, qnt) VALUES (?, ?, ?,?)`;
     
     const conn = await conexao();
     try {
-        // Executar a consulta
-        const [result] = await conn.query(sql, [itempedidoin]);
+        const valores = [
+            itempedido.id,
+            itempedido.id_pedido,
+           itempedido.id_produto,
+           itempedido.qnt,
+           
+        ];
+        const [result] = await conn.query(sql, valores);
         await conn.end();
         return result;
     } catch (err) {

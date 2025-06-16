@@ -5,8 +5,29 @@ async function produtodint(produtos) {
     
     const conn = await conexao();
     try {
-        // Executar a consulta
-        const [result] = await conn.query(sql, [produtodint]);
+
+                // Buscar id da categoria pelo nome
+                const [categoria] = await conn.query(
+                    `SELECT id FROM tbl_categoria WHERE nome = ?`,
+                    [produtos.categoria]
+                );
+        
+                if (categoria.length === 0) {
+                    throw new Error('Categoria não encontrada');
+                }
+        
+                const id_categoria = categoria[0].id;
+        
+           
+        
+        const valores = [
+            produtos.codigo,
+            produtos.nome,
+           produtos.id_categoria,
+           produtos.preco
+            
+        ];
+        const [result] = await conn.query(sql, valores);
         await conn.end();
         return result;
     } catch (err) {

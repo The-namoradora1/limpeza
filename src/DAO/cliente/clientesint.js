@@ -1,18 +1,23 @@
-import { conexao } from '../conexao.js';
 
-async function clientesint(cliente) {
-    const sql = `INSERT INTO tbl_cliente (codigo, telefone, nome, limite, id_endereco, id_status) VALUES (?, ?, ?, ?, ?, ?)`;
+
+
+
+const {conexao} = require('../conexao.js')
+
+async function clientesint(cliente){
+    const data = [cliente]
+    const sql = `INSERT INTO tbl_cliente (codigo, nome, telefone, limite, id_endereco, id_status) VALUES ?`
+    const conn = await conexao()
     
-    const conn = await conexao();
     try {
         // Executar a consulta
-        const [result] = await conn.query(sql, [clientesint]);
-        await conn.end();
-        return result;
-    } catch (err) {
-        await conn.end();
-        return err.message;
-    }
+        const [results] = await conn.query(sql,[data]);
+
+        await conn.end()
+        return results
+      } catch (err) {
+        return err.message
+      }
 }
 
-export { clientesint};
+module.exports = {clientesint}

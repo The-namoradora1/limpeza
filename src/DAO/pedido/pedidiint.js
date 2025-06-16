@@ -5,8 +5,13 @@ async function pedidiint(pedido) {
     
     const conn = await conexao();
     try {
-        // Executar a consulta
-        const [result] = await conn.query(sql, [pedidiint]);
+        const valores = [
+            pedido.numero,
+            pedido.data_elaboracao,
+           pedido.cliente_id,
+            
+        ];
+        const [result] = await conn.query(sql, valores);
         await conn.end();
         return result;
     } catch (err) {

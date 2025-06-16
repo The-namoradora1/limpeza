@@ -104,7 +104,7 @@ app.post('/empresalimpeza/v1/endereco', async (req, res) =>{
     res.json(endereco)
 })
 ;
-app.post('/empresalimpeza/v1/status', async (req, res) =>{
+app.post('/empresalimpeza/v2/status', async (req, res) =>{
       let {id, nome} = req.body
 
     let data = {id, nome }
