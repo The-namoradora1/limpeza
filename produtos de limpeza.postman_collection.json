@@ -1,0 +1,541 @@
+{
+	"info": {
+		"_postman_id": "0ca1043b-1590-4fa5-988e-719baccd02aa",
+		"name": "produtos de limpeza",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38776185"
+	},
+	"item": [
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"numero\": 31,\r\n        \"data_elaboracao\": \"2025-02-05\",\r\n        \"cliente_id\": 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v1/pedido",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clientpost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\" : 11,\r\n    \"telefone\" : \"0800770458\",\r\n    \"nome\" : \"everson zoio\",\r\n    \"limite\" : 500,\r\n    \"id_endereco\" : 11,\r\n    \"id_status\" : 2\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v1/cliente",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "produtopost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigo\": 11,\r\n        \"nome\": \"cera de piso\",\r\n        \"id_categoria\": 3,\r\n        \"preco\": 6.8\r\n     }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v1/produtos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "endpost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 11,\r\n        \"logradouro\": \"Av. oito de novembro\",\r\n        \"cep\": \"408001\",\r\n        \"numero\": 690,\r\n        \"bairro\": \"crucifixo\",\r\n        \"cidade\": \"amen-doim\"\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v1/endereco",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categoriapost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 6,\r\n        \"nome\": \"cera\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v1/categoria",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stattus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n        \"id\": 4,\r\n        \"nome\": \"blee\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v2/status",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v2",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get",
+			"item": [
+				{
+					"name": "tex apliccacao",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v1/cliente",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "end",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v1/endereco",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "produtos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v1/produtos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v1/categoria",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n        \"id\": 4,\r\n        \"nome\": \"blee\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v1/status",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "put",
+			"item": [
+				{
+					"name": "New request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "delete[",
+			"item": [
+				{
+					"name": "cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v1/cliente",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categoria",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 6\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/empresalimpeza/v1/categoria",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "status",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
