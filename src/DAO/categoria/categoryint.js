@@ -1,7 +1,7 @@
 import { conexao } from '../conexao.js';
 
 async function categoryint(categoria) {
-    const sql = `INSERT INTO tbl_categoria (id, nome) VALUES (?, ?, )`;
+    const sql = `INSERT INTO tbl_categoria (id, nome) VALUES (?, ?)`;
     
     const conn = await conexao();
     try {
