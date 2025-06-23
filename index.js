@@ -16,6 +16,10 @@ const {produtodint} = require ('./src/DAO/produtos/produtodint.js')
 const {stattusint} = require ('./src/DAO/status/stattusint.js')
 const {clientesint} = require('./src/DAO/cliente/clientesint.js')
 
+const{deletarcategoria} = require('./src/DAO/categoria/categorydel.js')
+const { deletarcliente } = require('./src/DAO/cliente/clientedel.js')
+
+
 app.use(
     express.urlencoded({
         extended: true
@@ -76,7 +80,7 @@ app.post('/empresalimpeza/v1/cliente', async (req, res) =>{
     let data = {codigo, telefone, nome, limite, id_endereco, id_status }
 
     console.log(data)
-    let clientes = await buscarClientes(data)
+    let clientes = await clientesint(data)
     res.json(clientes)
 });
 
@@ -89,7 +93,7 @@ let {codigo,nome, id_categoria, preco } = req.body
     let data = {codigo,nome, id_categoria, preco }
 
     console.log(data)
-    let produtos = await produtod(data)
+    let produtos = await produtodint(data)
     res.json(produtos)
 });
 
@@ -104,13 +108,13 @@ app.post('/empresalimpeza/v1/endereco', async (req, res) =>{
     res.json(endereco)
 })
 ;
-app.post('/empresalimpeza/v2/status', async (req, res) =>{
+app.post('/empresalimpeza/v1/status', async (req, res) =>{
       let {id, nome} = req.body
 
     let data = {id, nome }
 
     console.log(data)
-    let status = await stattus(data)
+    let status = await stattusint(data)
     res.json(status)
 });
 
@@ -139,9 +143,9 @@ app.post('/empresalimpeza/v1/itempedido', async (req, res) => {
 
 app.post('/empresalimpeza/v1/pedido', async (req, res) => {
 
-        let { numero, data_elaboracao, cliente_i } = req.body
+        let { numero, data_elaboracao, cliente_id } = req.body
 
-    let data = { numero, data_elaboracao, cliente_i }
+    let data = { numero, data_elaboracao, cliente_id }
 
     console.log(data)
 
@@ -150,7 +154,29 @@ app.post('/empresalimpeza/v1/pedido', async (req, res) => {
 });
 
 
+//delete
 
+app.delete('/empresalimpeza/v1/categoria', async (req, res) =>{
+   let { id } = req.body
+    let data = { id }
+
+    let categoria = await deletarcategoria(data)
+    console.log(data)
+    res.json(categoria )
+
+
+})
+
+app.delete('/empresalimpeza/v1/cliente', async (req, res) =>{
+    let { codigo } = req.body
+     let data = { codigo }
+ 
+     let cliente = await deletarcliente(data)
+     console.log(data)
+     res.json(cliente)
+ 
+ 
+ })
 
 const porta = 3000
 
