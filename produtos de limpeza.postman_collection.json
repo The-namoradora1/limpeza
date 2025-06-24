@@ -240,7 +240,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
+							"raw": "    \"codigo\": 1,\r\n        \"telefone\": \"11999990001\",\r\n        \"nome\": \"Joaao\",\r\n        \"limite\": 1000,\r\n        \"id_endereco\": 1,\r\n        \"id_status\": 1\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -372,23 +372,59 @@
 			"name": "put",
 			"item": [
 				{
-					"name": "New request",
+					"name": "endereco",
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "localhost:3000/empresalimpeza/v1/cliente",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"cliente"
+							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "New request",
+					"name": "produtos",
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "localhost:3000/empresalimpeza/v1/produtos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"produtos"
+							]
 						}
 					},
 					"response": []
@@ -447,6 +483,15 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "localhost:3000/empresalimpeza/v1/cliente",
 							"host": [
@@ -496,41 +541,113 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": 3\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "localhost:3000/empresalimpeza/v1/status",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"status"
+							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "New request",
+					"name": "produtos",
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "     {\r\n       \"codigo\": 31\r\n     \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "localhost:3000/empresalimpeza/v1/produtos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"produtos"
+							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "New request",
+					"name": "endereco",
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 24\r\n       \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "localhost:3000/empresalimpeza/v1/endereco",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"endereco"
+							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "New request",
+					"name": "pedido",
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "localhost:3000/empresalimpeza/v1/pedido",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"empresalimpeza",
+								"v1",
+								"pedido"
+							]
 						}
 					},
 					"response": []
